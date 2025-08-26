@@ -1,4 +1,4 @@
-from typing import List, Union
+from typing import List, Optional, Sequence, Union
 
 class FunnyNumber:
     """
@@ -26,6 +26,8 @@ class FunnyNumber:
             `str`: The reason why the funny number provided at initialization is considered funny.
         """
         ...
+
+    def __repr__(self) -> str: ...
 
 class DeterministicFunnyNumberFactory:
     def __init__(self, funny_number: FunnyNumber) -> None:
@@ -56,3 +58,42 @@ class DeterministicFunnyNumberFactory:
     @property
     def variance(self) -> float:
         pass
+
+    def __len__(self) -> int: ...
+    def __repr__(self) -> str: ...
+
+class RandomFunnyNumberFactory:
+    def __init__(self, funny_numbers: Optional[Sequence[FunnyNumber]] = None) -> None:
+        pass
+
+    @property
+    def funny_numbers(self) -> List[FunnyNumber]:
+        pass
+
+    @property
+    def max(self) -> FunnyNumber:
+        pass
+
+    @property
+    def min(self) -> FunnyNumber:
+        pass
+
+    @property
+    def mean(self) -> float:
+        pass
+
+    @property
+    def variance(self) -> float:
+        pass
+
+    def get_one(self) -> FunnyNumber:
+        pass
+
+    def get_many(self, count: int) -> List[FunnyNumber]:
+        pass
+
+    def get_many_unique(self, count: int) -> List[FunnyNumber]:
+        pass
+
+    def __len__(self) -> int: ...
+    def __repr__(self) -> str: ...

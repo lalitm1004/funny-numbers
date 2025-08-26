@@ -1,9 +1,4 @@
-use super::FunnyNumber;
-
-pub struct ConstFunnyNumber {
-    pub number: f64,
-    pub reason: &'static str,
-}
+use super::ConstFunnyNumber;
 
 pub const CONST_FUNNY_NUMBERS_LIST: [ConstFunnyNumber; 37] = [
     ConstFunnyNumber {
@@ -155,12 +150,3 @@ pub const CONST_FUNNY_NUMBERS_LIST: [ConstFunnyNumber; 37] = [
         reason: "Booboobs",
     },
 ];
-
-impl From<ConstFunnyNumber> for FunnyNumber {
-    fn from(cf: ConstFunnyNumber) -> Self {
-        FunnyNumber {
-            number: cf.number,
-            reason: cf.reason.to_string(),
-        }
-    }
-}

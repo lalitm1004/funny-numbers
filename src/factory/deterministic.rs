@@ -49,11 +49,11 @@ impl DeterministicFunnyNumberFactory {
         0_f64
     }
 
-    fn __repr__(&self) -> String {
-        "DeterministicFunnyNumberFactory(1)".to_string()
-    }
-
     fn __len__(&self) -> usize {
         1_usize
+    }
+
+    fn __repr__(&self) -> String {
+        "DeterministicFunnyNumberFactory(1)".to_string()
     }
 }
