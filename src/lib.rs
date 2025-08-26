@@ -1,6 +1,5 @@
 mod factory;
 mod number;
-mod utils;
 
 use pyo3::prelude::*;
 
